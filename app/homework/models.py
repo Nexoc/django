@@ -10,6 +10,15 @@ from django.db import models
 # my_first = HomeWork(title='first time')
 # my_first.save()
 
+# to add status as FK
+# status = HomeWorkStatus(name='it works')
+# status.save()
+# from homework.models import HomeWork
+# adv = HomeWork.objects.first()
+# adv.status = status
+# adv.save()
+# adv.status.name
+
 
 class HomeWork(models.Model):
     title = models.CharField(max_length=30)
