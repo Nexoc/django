@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.views.generic import TemplateView
 # Create your views here.
 
 
@@ -8,8 +8,17 @@ def home(request, *args, **kwargs):
     return render(request, 'html/home.html', {"name_von_my_list": my_list})
 
 
-def about(request):
-    return render(request, 'html/about.html', {})
+class About(TemplateView):
+    template_name = 'html/about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['name'] = "Marat"
+        context['title'] = "title"
+        context['description'] = """
+        Man kann alles schreiben, was man will!
+        """
+        return context
 
 
 # https://docs.djangoproject.com/en/4.1/ref/request-response/
