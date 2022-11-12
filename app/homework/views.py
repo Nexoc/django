@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-# Create your views here.
+from .models import HomeWork  # from homework.models
 
 
 def home(request, *args, **kwargs):
+    m_list = HomeWork.objects.all()
     my_list = ["eins", "zwei", "drei"]
-    return render(request, 'html/home.html', {"name_von_my_list": my_list})
+    return render(request, 'html/home.html', {"name_von_my_list": m_list})
 
 
 class About(TemplateView):
