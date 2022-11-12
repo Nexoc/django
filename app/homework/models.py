@@ -27,7 +27,8 @@ class HomeWork(models.Model):
     updated = models.DateTimeField(auto_now=True)
     price = models.FloatField(default=0)
     views_count = models.IntegerField(default=0)
-    status = models.ForeignKey("HomeWorkStatus", default=None, null=True, on_delete=models.CASCADE)
+    status = models.ForeignKey("HomeWorkStatus", default=None, null=True, on_delete=models.CASCADE,
+                               related_name="homework", verbose_name="status")
 
     def __str__(self):
         return self.title
@@ -39,3 +40,6 @@ class HomeWork(models.Model):
 
 class HomeWorkStatus(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name

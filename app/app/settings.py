@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'app.middleware.filter_ip_middleware.FilterIPMiddleware',
-    'app.middleware.wait.Wait',
+    # 'app.middleware.wait.Wait',  # wait 1 sec
 ]
 
 ROOT_URLCONF = 'app.urls'

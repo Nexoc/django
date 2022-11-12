@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from models import HomeWork  # from homework.models
+from .models import HomeWork  # from homework.models
 
 
 def home(request, *args, **kwargs):
