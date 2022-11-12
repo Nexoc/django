@@ -21,7 +21,7 @@ from django.db import models
 
 
 class HomeWork(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=30, db_index=True)  # index -> speed search
     description = models.CharField(max_length=30)
     created_at = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -32,9 +32,10 @@ class HomeWork(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        db_table = "hausaufgabe"  # rename DB
+        ordering = ['title']  # order by title
+
 
 class HomeWorkStatus(models.Model):
     name = models.CharField(max_length=100)
-
-
-
