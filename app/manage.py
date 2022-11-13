@@ -3,6 +3,9 @@
 import os
 import sys
 
+# django-admin startproject name
+# python manage.py startapp name
+
 
 def main():
     """Run administrative tasks."""

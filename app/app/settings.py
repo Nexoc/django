@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homework',
+    'profiles',
 ]
 
 # added FilterIPMiddleware, Wait
@@ -49,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'app.middleware.filter_ip_middleware.FilterIPMiddleware',
+    # 'app.middleware.filter_ip_middleware.FilterIPMiddleware',
     # 'app.middleware.wait.Wait',  # wait 1 sec
 ]
 
