@@ -1,0 +1,14 @@
+{% extends 'temp/main.html' %}
+
+{% block content %}
+
+    <h1>From DB</h1>
+
+    <ul>
+        {% for homework in homework_list %}
+
+          <li> <a href="/homework/{{ homework.id }}"> {{ homework.title }}</a> </li>
+
+        {% endfor %}
+    </ul>
+{% endblock content %}
