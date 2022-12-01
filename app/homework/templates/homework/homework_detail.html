@@ -4,9 +4,20 @@
 
     <h1>Details DB:</h1>
 
-        <ul>
-            <li><h2>{{ object.title }}</h2></li>
-            <li><h2>{{ object.description }}</h2></li>
+ <table>
+    <tr>
+        <th>Name: {{ object.title }}</th>
+        <th>created: {{ object.created_at }}</th>
+        <th>updated: {{ object.updated }}</th>
+    </tr>
+    <tr>
+        <th>price: {{ object.price }}</th>
+        <th>views count: {{ object.views_count }}</th>
+        <th>status: {{ object.status }}</th>
+    </tr>
+    <tr>
+        <th colspan="3">description: {{ object.description }}</th>
+    </tr>
+</table>
 
-        </ul>
 {% endblock content %}

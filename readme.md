@@ -1,1 +1,1 @@
-pip install requarement.md
+pip install -r requarement.md

@@ -6,7 +6,7 @@ from .models import HomeWork  # from homework.models
 
 
 def home(request, *args, **kwargs):
-    m_list = HomeWork.objects.all()
+    m_list = HomeWork.objects.all()[:5]  # first 5
     # my_list = ["eins", "zwei", "drei"]
     return render(request, 'home.html', {"name_von_my_list": m_list})
 
@@ -36,7 +36,7 @@ class HomeWorkListView(generic.ListView):
     model = HomeWork
     template_name = "homework_list.html"
     context_object_name = "homework_list"  # rename
-    queryset = HomeWork.objects.all()[:5]  # first 5
+    queryset = HomeWork.objects.all()
 
 
 class HomeWorkDetailView(generic.DetailView):
