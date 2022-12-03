@@ -4,7 +4,6 @@ from django.views.generic import TemplateView
 from .models import HomeWork  # from homework.models
 
 
-
 def home(request, *args, **kwargs):
     m_list = HomeWork.objects.all()[:5]  # first 5
     # my_list = ["eins", "zwei", "drei"]
