@@ -19,3 +19,5 @@ class UserFormView(View):
             User.objects.create(**user_form.cleaned_data)
             return HttpResponseRedirect('/')
         return render(request, "profiles/register.html", context={"user_form": user_form})
+
+# 5.3

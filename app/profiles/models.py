@@ -4,6 +4,7 @@ from django.db import models
 # python manage.py makemigrations
 # python manage.py migrate
 
+
 class User(models.Model):
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
