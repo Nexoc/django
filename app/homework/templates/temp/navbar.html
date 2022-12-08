@@ -1,35 +1,55 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <img src="{% static '/images/marat.png' %}" width="100" height="70">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ede7ca;">
+  <img src="{% static '/images/cocktails_logo.png' %}" width="50" height="50" padding="20">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-
+     
       <li class="nav-item active">
         <a class="nav-link" href="/home">Home</a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="/about">about</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="">Hinzufügen</a>
       </li>
+
+<!-- 
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+
 
       <li class="nav-item">
         <a class="nav-link" href="/profiles/register">sign up</a>
       </li>
-
+ -->
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+          Anzeigen
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/ip">your IP</a>
+          <!-- <a class="dropdown-item" href="/ip">your IP</a>
           <a class="dropdown-item" href="/admin">Admin</a>
+          <a class="dropdown-item" href="/homework">homework</a> -->
+
+          <a class="dropdown-item" href="">Sommer</a>
+          <a class="dropdown-item" href="">Winter</a>
+          <a class="dropdown-item" href="">Alkoholfrei</a>
+          <a class="dropdown-item" href="">Eistee</a>
           <a class="dropdown-item" href="/homework">homework</a>
         </div>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="">Ändern</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="">Löschen</a>
       </li>
 
     </ul>
