@@ -1,9 +1,17 @@
 from django import forms
-from django.core.exceptions import ValidationError
+#  from django.core.exceptions import ValidationError
+from .models import User
 # manage.py shell
 
 
+class UserForm(forms.ModelForm):
 
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+'''
 class UserForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField()
@@ -28,3 +36,4 @@ class UserForm(forms.Form):
             self.add_error('first_name', msg)
             self.add_error('last_name', msg)
 
+'''
