@@ -12,3 +12,4 @@ class User(models.Model):
     last_name = models.CharField(max_length=20)
     email = models.EmailField()
     # birthday = models.DateField()
+    # img = models.ImageField(upload_to = "images/")

@@ -30,6 +30,7 @@ class UserEditFormView(View):
     def post(self, request, profile_id):
         user = User.objects.get(id=profile_id)
         user_form = UserForm(request.POST, instance=user)
+        print(user_form)
 
         if user_form.is_valid():
             user.save()

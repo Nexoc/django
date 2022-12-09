@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'homework',
     'profiles',
+    'coctails'
 ]
 
 # added FilterIPMiddleware, Wait
