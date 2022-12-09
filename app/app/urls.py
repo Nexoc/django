@@ -24,7 +24,7 @@ urlpatterns = [
     path('', include('homework.urls')),
     path('profiles/register/', UserFormView.as_view()),
     path('profiles/<int:profile_id>/edit/', UserEditFormView.as_view()),
-    path("cocktails/", cocktails.ListView.as_view(), name="was ist das? app/urls"),
-    path("list/<int:list_id>/", cocktails.CockatilsListView.as_view(), name="list"),
+    path("cocktails/", cocktails.CocktailsListView.as_view(), name="was ist das? app/urls"),
+    # path("list/<int:list_id>/", cocktails.CocktailsListView.as_view(), name="list"),
     # path('cocktails/', include('coctails.urls')),
 ]
