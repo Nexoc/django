@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+    <h2>Edit data</h2>
+    <form method="post" action="/profiles/{{  profiles_id  }}/edit/">
+        {% csrf_token %}
+        {{  user_form.as_p  }}
+        <button type="submit">Save</button>
+    </form>
+
+</body>
+</html>
+
