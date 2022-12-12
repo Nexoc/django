@@ -1,0 +1,62 @@
+{% extends 'temp/main.html' %}
+
+{% block content %}
+
+    <h1>Insert Cocktail Details</h1>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="cocktailname">Cocktail name</label>
+              <input type="text" class="form-control" id="cocktailname" placeholder="Insert cocktailname here...">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" id="price" placeholder="price in €...">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <label for="description">Cocktail Description/Recipe</label>
+                    <textarea class="form-control" id="description" rows="5"></textarea>
+                </div>
+            </div>    
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="alcohol">Alcohol</label>
+                <select id="alcohol" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div> 
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="season">Season</label>
+                <select id="season" class="form-control">
+                    <option selected>Choose season...</option>
+                    <option>Spring</option>
+                    <option>Summer</option>
+                    <option>Autumn</option>
+                    <option>Winter</option>
+                </select>
+            </div> 
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="type_of_drink">Longdrink/Shortdrink</label>
+                <select id="type_of_drink" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Longdrink</option>
+                    <option>Shortdrink</option>
+                </select>
+            </div> 
+          </div>
+      </form>
+
+{% endblock content %}
+
