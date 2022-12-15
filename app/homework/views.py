@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import TemplateView
 from .models import HomeWork  # from homework.models
@@ -41,3 +42,9 @@ class HomeWorkListView(generic.ListView):
 class HomeWorkDetailView(generic.DetailView):
     model = HomeWork
     # template_name = "homework_detail.html"  # /templates/homework/homework_detail.html
+
+
+class HomeWorkUpdateView(generic.UpdateView):
+    model = HomeWork
+    fields = ['title', 'description', 'price', 'status']  # '__all__'
+    success_url = reverse_lazy('/')
