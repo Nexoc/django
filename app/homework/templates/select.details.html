@@ -1,0 +1,22 @@
+{% extends 'temp/main.html' %}
+
+{% block content %}
+<style>
+    
+</style>
+<h1>Cocktail Details:</h1>
+
+<table>
+   <tr><td>Name: {{ object.title }}</th> </tr>
+   <tr><td>created: {{ object.created_at }}</td> </tr>
+   <tr><td>updated: {{ object.updated }}</td></tr>
+   <tr><td>price: {{ object.price }}</td></tr>
+   <tr><td>views count: {{ object.views_count }}</td></tr>
+   <tr><td>status: {{ object.status }}</td></tr>
+   <tr><td>Alkoholgehalt: {{ object.alcohol }}</td></tr>
+   <tr><td>season: {{ object.season }}</td></tr>
+   <tr><td colspan="3">description: {{ object.description }}</td></tr>
+      
+</table>
+
+{% endblock content %}

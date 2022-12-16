@@ -1,0 +1,39 @@
+{% extends 'temp/main.html' %}
+
+    <style>
+      body{
+        margin: 3%;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        height: 20%;
+      }
+      .image-container {
+        width: 30%;
+        height: auto;
+        border: 1px black;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  
+  <body>
+    <h1>Choose a Cocktail to change Details</h1>
+    {% block content %}
+    {% for homework in homework_list %}
+    <div class="container">
+      <div class="image-container">
+        
+       <a href=""><img src="" alt=""> </a>
+      
+      </div>
+    </div>
+    
+    {% endfor %} 
+    {% endblock content %}
+  </body>
+  
+

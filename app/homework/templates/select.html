@@ -21,13 +21,14 @@
     </style>
   
   <body>
+    <h1>Choose your Cocktail</h1>
     {% block content %}
     {% for homework in homework_list %}
     <div class="container">
       <div class="image-container">
         
        <li><a href="/homework/{{ homework.id }}"><img src="" alt="image1"> {{ homework.title }}</a> </li>
-      
+      <li><a href="">Update Cocktails</a></li>
       </div>
     </div>
     {% endfor %} 

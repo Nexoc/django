@@ -19,11 +19,11 @@
         <div class="form-row">
             <div class="form-group col-md-3">
               <label for="cocktailname">Cocktail name</label>
-              <input type="text" class="form-control" id="cocktailname" placeholder="Insert cocktailname here...">
+              <input type="text" class="form-control" id="cocktailname" value="{{ object.title }}">
             </div>
             <div class="form-group col-md-3">
               <label for="price">Price</label>
-              <input type="text" class="form-control" id="price" placeholder="price in €...">
+              <input type="text" class="form-control" id="price" value="{{ object.price }}">
             </div>
           </div>
 
@@ -31,7 +31,7 @@
             <div class="form-group col-md-6">
                 <div class="form-group">
                     <label for="description">Cocktail Description/Recipe</label>
-                    <textarea class="form-control" id="description" rows="5"></textarea>
+                    <textarea class="form-control" id="description" rows="5" value="{{ object.description }}"></textarea>
                 </div>
             </div>    
           </div>
@@ -39,7 +39,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="alcohol">Alcohol</label>
-                <select id="alcohol" class="form-control">
+                <select id="alcohol" class="form-control" value="{{ object.alcohol }}">
                     <option selected>Choose...</option>
                     <option>Yes</option>
                     <option>No</option>
@@ -69,7 +69,7 @@
             </div> 
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Update</button>
       </form>
 
 {% endblock content %}
