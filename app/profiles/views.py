@@ -5,6 +5,11 @@ from django.views import View
 from .models import User
 
 
+def show(request, *args, **kwargs):
+    m_list = User.objects.all()[:5]  # first 5
+    return render(request, "profiles/show.html", {"name_von_my_list": m_list})
+
+
 class UserFormView(View):
 
     def get(self, request):
@@ -22,15 +27,17 @@ class UserFormView(View):
 
 
 class UserEditFormView(View):
+
     def get(self, request, profile_id):
         user = User.objects.get(id=profile_id)
         user_form = UserForm(instance=user)
+        print(f'user get: {user.id} - {profile_id}')
         return render(request, 'profiles/edit.html', context={'user_form': user_form, 'profile_id': profile_id})
 
     def post(self, request, profile_id):
+        print(f'user post: - > {profile_id}')
         user = User.objects.get(id=profile_id)
         user_form = UserForm(request.POST, instance=user)
-        print(user_form)
 
         if user_form.is_valid():
             user.save()

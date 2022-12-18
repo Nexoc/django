@@ -41,3 +41,5 @@ class HomeWorkListView(generic.ListView):
 class HomeWorkDetailView(generic.DetailView):
     model = HomeWork
     # template_name = "homework_detail.html"  # /templates/homework/homework_detail.html
+
+

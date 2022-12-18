@@ -6,10 +6,11 @@
 </head>
 <body>
     <h2>Edit data</h2>
-    <form method="post" action="/profiles/{{  profiles_id  }}/edit/">
+    <form method="post" action="/profiles/{{ profiles_id }}/edit/">
         {% csrf_token %}
         {{  user_form.as_p  }}
         <button type="submit">Save</button>
+        <h4>here {{ profiles_id }} </h4>
     </form>
 
 </body>

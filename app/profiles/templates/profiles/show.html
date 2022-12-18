@@ -1,0 +1,19 @@
+{% extends 'temp/main.html' %}
+
+{% block content %}
+
+    <h1>listview</h1>
+
+    <ul>
+        {% for info in name_von_my_list %}
+          <li>{{ info.username }} </li>
+          <li>{{ info.password }} </li>
+          <li>{{ info.first_name }} </li>
+          <li>{{ info.last_name }} </li>
+          <li>{{ info.email }} </li>
+            <br>
+        {% endfor %}
+
+    </ul>
+
+{% endblock content %}
