@@ -9,5 +9,5 @@ urlpatterns = [
     path("ip/", views.get_client_ip, name='ip'),
     path("homework/", views.HomeWorkListView.as_view(), name='homework_list'),
     path("homework/<int:pk>", views.HomeWorkDetailView.as_view(), name='homework-detail'),
-    path("homework/update/<int:pk>", views.HomeWorkUpdateView.as_view(), name='homework-update'),
+    # path("homework/update/<int:pk>", views.HomeWorkUpdateView.as_view(), name='homework-update'),
 ]
