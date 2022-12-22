@@ -6,7 +6,7 @@ from .models import User
 
 
 def show(request, *args, **kwargs):
-    m_list = User.objects.all()[:5]  # first 5
+    m_list = User.objects.all()  # [:5]  # first 5
     return render(request, "profiles/show.html", {"name_von_my_list": m_list})
 
 

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from coctails.views import CocktailsListView, CocktailCreate, CocktailUpdate
+# from coctails.views import CocktailsListView, CocktailCreate, CocktailUpdate
 from profiles.views import UserFormView, UserEditFormView
 
 
@@ -27,18 +27,5 @@ urlpatterns = [
     path('profiles/show/', UserFormView.as_view()),
     path('profiles/<int:profile_id>/edit/', UserEditFormView.as_view()),
 
-    path("cocktails/", CocktailsListView.as_view(), name="was ist das? app/urls"),
-    # path("list/<int:list_id>/", cocktails.CocktailsListView.as_view(), name="list"),
-    # path('cocktails/', include('coctails.urls')),
-    # CRUD patterns for create new cocktail
-    path(
-        "cocktails/create/",
-        CocktailCreate.as_view(),
-        name="cocktail-add",
-    ),
-    path(
-        "cocktails/<int:list_id>/item/<int:pk>/",
-        CocktailUpdate.as_view(),
-        name="cocktail-update",
-    ),
+    path("cocktails/", include('coctails.urls')),
 ]

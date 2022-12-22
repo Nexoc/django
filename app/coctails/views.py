@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Coctail
 from django.urls import reverse
 from django.views.generic import (
@@ -6,9 +6,18 @@ from django.views.generic import (
     CreateView,
     UpdateView,
 )
+from .forms import Cocktail
+
+# DBname.objects.get() -> 1 object; .all()[:5] -> all first 5; .filter(last_name='smith').all
+# from django.db.models import Q # -> AND OR
+# Coctail.objects.filter(Q(price=4)& Q(title='margarita')).all()  # AND &
+# Coctail.objects.filter(Q(price=4)| Q(title='margarita')).all()  # OR  |
+# filter(title__startswith='s').all()  # startswith
+# filter(price__in=[1, 5, 15, 20]).all()  # in 
+# filter(price__gte=6).all()  # gte gr or equel; gte, lt, lte, 
+# Coctail.objects.filter((price=4).order_by('title').all()
 
 
-# Create your views here:
 class CocktailsListView(ListView):
     model = Coctail
     template_name = "coctails.html"
@@ -16,53 +25,25 @@ class CocktailsListView(ListView):
     queryset = Coctail.objects.all()
 
 
-class CocktailCreate(CreateView):
-    model = Coctail
+def create_new_coctail(request):
+    if request.method == 'POST':
+        form = Cocktail(request.POST)
 
-    fields = [
-        "title",
-        "description",
-        "price",
-        "alcohol",
-        "season",
-        "type_of_drink",
-    ]
+        if form.is_valid():
+            # print(form.cleaned_data)
+            form.save()
+            return redirect(reverse('coctails:create'))
 
-    def get_initial(self):
-        initial_data = super(CocktailCreate, self).get_initial()
-        # cocktail_list = Coctail.objects.get(id=self.kwargs["cocktail_id"])
-        # initial_data["cocktail_list"] = cocktail_list
-        return initial_data
+    else:
+        form = Cocktail()
 
-    def get_context_data(self):
-        context = super(CocktailCreate, self).get_context_data()
-        # cocktail_list = Coctail.objects.get(id=self.kwargs["list_id"])
-        # context["cocktail_list"] = cocktail_list
-        # context["title"] = "Create a new item"
-        return context
-
-    def get_success_url(self):
-        return reverse("list", args=[self.object.cocktail_list_id])
+    return render(request, "create.html", context={'form':form})
 
 
-class CocktailUpdate(UpdateView):
-    model = Coctail
-    fields = [
-        "title",
-        "description",
-        "price",
-        "created_date",
-        "alcohol",
-        "season",
-        "type_of_drink",
-    ]
+def thank_you(request):
+    return render(request, 'thank_you.html')
 
-    def get_context_data(self):
-        context = super(CocktailUpdate, self).get_context_data()
-        context["cocktail_list"] = self.object.cocktail_list_id
-        context["title"] = "Edit item"
-        return context
 
-    def get_success_url(self):
-        return reverse("list", args=[self.object.cocktail_list_id])
+
+
 

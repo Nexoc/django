@@ -6,5 +6,28 @@
 </head>
 <body>
 
+    <h1>Create new Coctail</h1>
+
+    <div class='dein_class'>
+        <form method="POST">
+
+            {% csrf_token %}
+            {% for field in form %}
+
+                <div class="keine_ahnung">
+                
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors}}
+
+                </div>
+
+            {% endfor %}
+
+            <input type="submit">
+
+        </form>
+    </div>
+
 </body>
 </html>
