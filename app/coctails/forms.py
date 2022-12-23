@@ -18,3 +18,10 @@ class Cocktail(forms.ModelForm):
             'season': 'Season',
             'type_of_drink': 'Type of drink',
         }
+
+        error_messages = {
+            'price':{
+                'min_value':'Hei, Mimumus is 1',
+                'max_value':'Hei Yasin! Maximus is just 15',
+            },
+        }

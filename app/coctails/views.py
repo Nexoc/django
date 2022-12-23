@@ -19,7 +19,7 @@ from .forms import Cocktail
 
 
 class CocktailsListView(ListView):
-    model = Coctail
+    model = Coctail  # From DB
     template_name = "coctails.html"
     context_object_name = "cocktail_list"  # rename
     queryset = Coctail.objects.all()
@@ -27,7 +27,7 @@ class CocktailsListView(ListView):
 
 def create_new_coctail(request):
     if request.method == 'POST':
-        form = Cocktail(request.POST)
+        form = Cocktail(request.POST)  # From Form
 
         if form.is_valid():
             # print(form.cleaned_data)

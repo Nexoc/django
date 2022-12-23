@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 # python manage.py makemigrations coctails
 # python manage.py migrate
 
@@ -7,7 +7,7 @@ from django.db import models
 class Coctail(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
-    price = models.FloatField(default=1)
+    price = models.FloatField(default=1, validators=[MinValueValidator(1),MaxValueValidator(15)])
     created_date = models.DateTimeField(auto_now_add=True)
     alcohol = models.ForeignKey("Alco", on_delete=models.CASCADE)
     season = models.ForeignKey("Season", on_delete=models.CASCADE)
