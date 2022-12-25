@@ -28,4 +28,5 @@ urlpatterns = [
     path('profiles/<int:profile_id>/edit/', UserEditFormView.as_view()),
 
     path("cocktails/", include('coctails.urls')),
+    path('genericview/', include('genericview.urls'))
 ]

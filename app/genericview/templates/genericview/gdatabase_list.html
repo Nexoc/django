@@ -1,0 +1,25 @@
+<h1>List (ListView)</h1>
+
+<ul>
+    {% for i in example_list %}
+
+    <li>
+        <a href="detail/{{ i.id }}">{{ i.first_name }} detail</a> 
+            <ul>
+                <li>
+                <a href="update/{{ i.id }}">update information for {{ i.first_name }} </a>
+                </li>
+                <li>
+                    <a href="delete/{{ i.id }}">delete information for {{ i.first_name }} </a>
+                </li>
+            </ul>
+    </li>
+
+    {% endfor %}
+</ul>
+
+<ul>
+    <li>
+        <a href="{% url "genericview:home" %}">link to home.html</a>
+    </li>
+</ul>
