@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 
-app_name = 'coctails'
+app_name = 'coctails_not_clean'
 # app name: path name
 # return redirect(reverse('coctails:create'))
 urlpatterns = [

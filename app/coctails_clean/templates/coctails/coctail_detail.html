@@ -1,0 +1,32 @@
+<h1>Detail View for Example</h1>
+<h4>Don't forget -> variable name has to be a database name</h4>
+
+<ul>
+    <li>
+        {{ coctail.title }}
+            <ul>
+                <li>
+                    {{ coctail.description }}
+                </li>
+                <li>
+                    {{ coctail.created_date }}
+                </li>
+                <li>
+                    {{ coctail.alcohol }}
+                </li>
+                <li>
+                    {{ coctail.season }}
+                </li>
+                <li>
+                    {{ coctail.type_of_drink }}
+                </li>
+            </ul>
+    </li>
+</ul>
+
+
+<ul>
+    <li>
+        <a href="{% url "coctails:home" %}">link to home.html</a>
+    </li>
+</ul>

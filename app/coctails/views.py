@@ -5,6 +5,7 @@ from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
+    DeleteView
 )
 from .forms import Cocktail
 

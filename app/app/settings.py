@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'homework',
     'profiles',
     'coctails',
-    'genericview',
+    # 'genericview',
+    'coctails_clean',
 ]
 
 # added FilterIPMiddleware, Wait

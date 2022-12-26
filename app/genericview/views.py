@@ -39,7 +39,7 @@ class ExampleDetailView(DetailView):
 
 
 class ExampleUpdateView(UpdateView):
-    # Return Only One Model entry PK --- PK
+    # Return Only One Model entry PK -> PK
     # model_detail.html
     model = GDatabase
     fields = '__all__'  # ['last_name', 'first_name']

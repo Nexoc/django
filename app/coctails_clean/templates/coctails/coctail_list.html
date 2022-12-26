@@ -1,0 +1,25 @@
+<h1>List (ListView)</h1>
+
+<ul>
+    {% for coctail in coctails_list %}
+
+    <li>
+        <a href="detail/{{ coctail.id }}">{{ coctail.title }} detail</a> 
+            <ul>
+                <li>
+                <a href="update/{{ coctail.id }}">update information for {{ coctail.title }} </a>
+                </li>
+                <li>
+                    <a href="delete/{{ coctail.id }}">delete {{ coctail.title }} </a>
+                </li>
+            </ul>
+    </li>
+
+    {% endfor %}
+</ul>
+
+<ul>
+    <li>
+        <a href="{% url "coctails:home" %}">link to home.html</a>
+    </li>
+</ul>

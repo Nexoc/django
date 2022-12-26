@@ -16,17 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # from coctails.views import CocktailsListView, CocktailCreate, CocktailUpdate
-from profiles.views import UserFormView, UserEditFormView
+# from profiles.views import UserFormView, UserEditFormView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('homework.urls')),
-    path('profiles/', include('profiles.urls')),
-    path('profiles/register/', UserFormView.as_view()),
-    path('profiles/show/', UserFormView.as_view()),
-    path('profiles/<int:profile_id>/edit/', UserEditFormView.as_view()),
+    # path('', include('homework.urls')),
+    # path('profiles/', include('profiles.urls')),
+    # path('profiles/register/', UserFormView.as_view()),
+    # path('profiles/show/', UserFormView.as_view()),
+    # path('profiles/<int:profile_id>/edit/', UserEditFormView.as_view()),
 
-    path("cocktails/", include('coctails.urls')),
-    path('genericview/', include('genericview.urls'))
+    # path("cocktails/", include('coctails.urls')),
+    # path('genericview/', include('genericview.urls')),
+    path("", include('coctails_clean.urls')),
 ]
