@@ -11,7 +11,8 @@ class HomeView(TemplateView):
 
 class CoctailCreateView(CreateView):
     model = Coctail
-    fields = "__all__"  # or ['first_name',"second_name"]
+    # form_class = Cocktail
+    fields = "__all__"  # or ['name',"second_name"]
     success_url = reverse_lazy("coctails:list_form")
 
 
