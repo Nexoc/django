@@ -16,7 +16,8 @@ class Cocktail(forms.ModelForm):
             'price': 'Price',
             'alcohol': 'Alcohol',
             'season': 'Season',
-            'type_of_drink': 'Type of drink',
+            'type_of_drink': 'Type of drink',   
+            'image': 'your picture',         
         }
 
         error_messages = {

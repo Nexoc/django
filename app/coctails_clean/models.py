@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-# python3 manage.py makemigrations coctails
+# python3 manage.py makemigrations coctails_clean
 # python3 manage.py migrate
 
 
@@ -12,6 +12,7 @@ class Coctail(models.Model):
     alcohol = models.ForeignKey("Alco", on_delete=models.CASCADE)
     season = models.ForeignKey("Season", on_delete=models.CASCADE)
     type_of_drink = models.ForeignKey("Type_Of_Drink", on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images/', default=None, null=True)
 
     def __str__(self):
         return f"{self.title}"
