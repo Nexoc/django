@@ -9,6 +9,9 @@
                     {{ coctail.description }}
                 </li>
                 <li>
+                    {{ coctail.price }} €
+                </li>
+                <li>
                     {{ coctail.created_date }}
                 </li>
                 <li>
@@ -21,7 +24,7 @@
                     {{ coctail.type_of_drink }}
                 </li>
                 <li>
-                    {{ coctail.image }}
+                    <img src="{{ coctail.image.url }}">
                 </li>
             </ul>
     </li>

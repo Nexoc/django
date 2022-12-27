@@ -18,6 +18,10 @@ from django.urls import path, include
 # from coctails.views import CocktailsListView, CocktailCreate, CocktailUpdate
 # from profiles.views import UserFormView, UserEditFormView
 
+# for static
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,3 +35,6 @@ urlpatterns = [
     # path('genericview/', include('genericview.urls')),
     path("", include('coctails_clean.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

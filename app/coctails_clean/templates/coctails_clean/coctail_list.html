@@ -4,13 +4,17 @@
     {% for coctail in coctails_list %}
 
     <li>
-        <a href="detail/{{ coctail.id }}">{{ coctail.title }} detail</a> 
+
+        <h4>{{ coctail.title }}</h4>
             <ul>
                 <li>
-                <a href="update/{{ coctail.id }}">update information for {{ coctail.title }} </a>
+                    <a href="detail/{{ coctail.id }}">detail </a> 
                 </li>
                 <li>
-                    <a href="delete/{{ coctail.id }}">delete {{ coctail.title }} </a>
+                <a href="update/{{ coctail.id }}">update</a>
+                </li>
+                <li>
+                    <a href="delete/{{ coctail.id }}">delete</a>
                 </li>
             </ul>
     </li>
