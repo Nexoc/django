@@ -3,36 +3,56 @@
 
 {% block content %}
 
+<style>
+  .container1{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
 
-<h1>List (ListView)</h1>
+  .container2{
+    width: 33%;
+    height: 130px;
+    justify-content: space-between;
+   border: 1px black solid;
+  }
 
-<ul>
-    {% for coctail in coctails_list %}
+  h4{
+    text-align:center;
+  }
 
-    <li>
+.home{
+    margin: 10px;
+    text-align: center;
+}
+</style>
 
-        <h4>{{ coctail.title }}</h4>
-            <ul>
-                <li>
-                    <a href="detail/{{ coctail.id }}">detail </a> 
-                </li>
-                <li>
-                <a href="update/{{ coctail.id }}">update</a>
-                </li>
-                <li>
-                    <a href="delete/{{ coctail.id }}">delete</a>
-                </li>
-            </ul>
-    </li>
+<h1>All cocktails</h1>
+<div class="container1">
+{% for coctail in coctails_list %}
 
-    {% endfor %}
-</ul>
+    <div class="container2"> 
+    <h4>{{ coctail.title }}</h4>
+        <ul>
+            <li>
+                <a href="detail/{{ coctail.id }}">Cocktail details </a> 
+            </li>
+            <li>
+            <a href="update/{{ coctail.id }}">update cocktail</a>
+            </li>
+            <li>
+                <a href="delete/{{ coctail.id }}">delete cocktail</a>
+            </li>
+        </ul>
+    </div>     
+{% endfor %}
+</div>
 
-<ul>
-    <li>
-        <a href="{% url "coctails:home" %}">link to home.html</a>
-    </li>
-</ul>
-
+<div class="home">
+    <a href="{% url "coctails:home" %}" >Back to Homepage</a>
+</div>
 
 {% endblock content %}

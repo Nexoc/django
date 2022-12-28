@@ -4,15 +4,15 @@
 {% block content %}
 
 
-<h1>Are you sure you want to delete this coctail?</h1>
-<h3>{{ coctail }}</h3>
+<h1>Are you sure you want to delete this cocktail?</h1>
+<h3>Name: {{ coctail }}</h3>
 <form method="POST">
     {% csrf_token %}
     <input type=submit value="Confirm Delete">    
 </form>
 <ul>
     <li>
-        <a href="{% url "coctails:home" %}">link to home.html</a>
+        <a href="{% url "coctails:home" %}">Back to Homepage</a>
     </li>
 </ul>
 

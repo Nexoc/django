@@ -1,49 +1,39 @@
-
 {% extends 'main.html' %}
 
 {% block content %}
 
+<style>
+    
+.home{
+    margin: 10px;
+    text-align: center;
+}
+</style>
 
-
-
-<h1>Detail View for Example</h1>
-<h4>Don't forget -> variable name has to be a database name</h4>
-
+<h1>Cocktail name:  {{ coctail.title }}</h1>
 <ul>
-    <li>
-        {{ coctail.title }}
-            <ul>
-                <li>
-                    {{ coctail.description }}
-                </li>
-                <li>
-                    {{ coctail.price }} €
-                </li>
-                <li>
-                    {{ coctail.created_date }}
-                </li>
-                <li>
-                    {{ coctail.alcohol }}
-                </li>
-                <li>
-                    {{ coctail.season }}
-                </li>
-                <li>
-                    {{ coctail.type_of_drink }}
-                </li>
-                <li>
-                    <img src="{{ coctail.image.url }}">
-                </li>
-            </ul>
-    </li>
+            
+            <li>
+               <p>Price: {{ coctail.price }} €</p>
+            </li>
+            <li>
+                <p>Recipe created on {{ coctail.created_date }}</p>
+            </li>
+            <li>
+                {{ coctail.alcohol }}
+            </li>
+            <li>
+                <p>Season: {{ coctail.season }}</p>
+            </li>
+            <li>
+               <p>This type of drink is a {{ coctail.type_of_drink }}.</p> 
+            </li>
+            <li><p style="width: 400px;">Description: {{ coctail.description }} </p>
+            </li>
+            
+                <img src="{{ coctail.image.url }}">
+            
 </ul>
-
-
-<ul>
-    <li>
-        <a href="{% url "coctails:home" %}">link to home.html</a>
-    </li>
-</ul>
-
+  
 
 {% endblock content %}

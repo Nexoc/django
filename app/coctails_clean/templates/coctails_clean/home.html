@@ -3,16 +3,50 @@
 
 {% block content %}
 
+<style>
+    .container{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+       
+        width: 50%;
+        
+    }
+    .create{
+        justify-content: space-around;
+       
+        width: 25%;
+       
+        text-align: center;
+        margin: auto;
+    }
+    a{
+        text-decoration: none;
+        cursor: pointer;
+        color: black;
+    }
+    a:hover{
+        text-decoration: none;
+        color: blue;
+    }
+</style>
+<h1 style="text-align: center;">Welcome to Cocktail recipes</h1>
+<br> <br>
+<div class="container">
+   <div class="create">
+    <h3>Create a new cocktail</h3>
+    <img src="static\images\cocktail_create.png" style="width: 60px; height: 80px;" alt="">
+<h1><a href="{% url "coctails:create_form" %}">+</a></h1>
+   </div> 
 
-<h1>Welcome to home.html</h1>
 
-<ul>
-    <li>
-        <a href="{% url "coctails:create_form" %}">create coctail</a>
-    </li>
-    <li>
-        <a href="{% url "coctails:list_form" %}">show all coctails</a>
-    </li>
-</ul>
+
+    <div class="create">
+     <h3>Show all cocktails</h3>
+     <img src="static\images\cocktails.png" style="width: 80%; height: 20%;" alt="">
+ <h1><a href="{% url "coctails:list_form" %}">Here</a></h1>
+    </div> 
+</div>
+ 
 
 {% endblock content %}
