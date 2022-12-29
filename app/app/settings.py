@@ -9,7 +9,14 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+
+# cd ~bash/
+# nano .bashrc
+# there write your 24, 29, 33
+# without blank and ""
+# export SECRET_KEY=django-insecure--gmm6@-c)uwvq6@b3puo9z&@83)yz_z_$an$38_k($)mo^(-$^
 import os.path
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,12 +28,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure--gmm6@-c)uwvq6@b3puo9z&@83)yz_z_$an$38_k($)mo^(-$^'
+# SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = os.getenv('DEBUG')
+
 
 ALLOWED_HOSTS = ["127.0.0.1", "davl.at"]
-
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
 # Application definition
 
@@ -40,7 +51,7 @@ INSTALLED_APPS = [
     'homework',
     'profiles',
     'coctails',
-    # 'genericview',
+    'genericview',
     'coctails_clean',
 ]
 
@@ -131,6 +142,16 @@ MEDIA_ROOT = BASE_DIR / "media"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# HTTPS settings
+# SESSION_COOLIE_SECURE = True
+# CSFR_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
+
+# HSTS settings
+# SECURE_HSTS_SECONDS = 31536000 # year
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
